@@ -1,11 +1,15 @@
 plugins{
     id 'base'
-    id 'com.plantir.docker' version '0.22.1'
-    id 'com.plantir.docker-run' version '0.22.1'
+    id 'com.palantir.docker' version '0.22.1'
+    id 'com.palantir.docker-run' version '0.22.1'
     id 'pl.allegro.tech.build.axion-release' version '1.10.1'
 }
 
 project.version = scmVersion.version
+
+repositories{
+    mavenCentral()
+}
 
 docker {
     name "${project.name}:${project.version}"
